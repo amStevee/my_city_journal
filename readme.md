@@ -1,12 +1,12 @@
 TRAVEL JOURNAL
-this journal helps one to save and share his/her travel experence with the world while letting them have a peack at other people travel journal if public. it also allow you comment on peoples article
+this journal helps one to save and share his/her travel experence with the world while letting them have a peack at other people travel journal /if public. it also allow you comment on peoples article
 
 <!-- DATABASE -->
 
 Create an Author model that store detailes about each user such as:
 {index[id], firstname, lastname, middlename?, index[username], email, password, following[] created@, updated@}
 Each user should have an article[] attached to them
-every atticle should be an object with:
+every atticle should include:
 {id, title, location, description, rating, isPublic, Comments[
 {id, comment, articleId[relating to it's article]}
 ], image, userId[relating to it's Author]}
@@ -16,13 +16,15 @@ An article image can be an array of images or just an image.
 <!-- IMPLIMENTATION -->
 
 using prisma to create all modals [Author, Articles, Comments]
+npx prisma init
+npx prisma migrate dev --name init
 
 <!-- .......................................................................................................................... -->
 
 <!-- API -->
 
-Let users Register to the travel_journal by sending their {firstname, lastname, middlename?, index[username], email, password}
-to the Author Table.
+Let users Register to the travel_journal by sending their {firstname, lastname, middlename?, index[username], email, password} recieved from the frontend to the 
+Author Table.
 
     GET a general list of isPublic Journal articles.
     Filter result by location or year.
