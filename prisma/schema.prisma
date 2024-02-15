@@ -15,12 +15,12 @@ model Author {
   firstname  String
   lastname   String
   middlename String?
-  username   String
-  email      String
+  username   String @unique
+  email      String @unique
   password   String  @db.VarChar()
-  following  String[]
+  following  String[] @default([])
   created_at DateTime @default(now())
-  updated_at DateTime
+  updated_at DateTime?
   articles   Article[]
   @@index([id, username])
 }
