@@ -45,3 +45,5 @@ npm i cors dotenv express jsonwebtoken multer ts-loader ts-node uuid bcrypt @pri
 npm i typescript
 
 npm i -D nodemon @types/node @types/uuid concurrently prisma webpack webpack-cli @types/cors @types/dotenv @types/express @types/jsonwebtoken @types/nodemon
+
+

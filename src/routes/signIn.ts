@@ -1,9 +1,9 @@
-import express from 'express'
-import { login, register } from '../controllers/register'
-import { verifyToken } from '../middleware/verifyToken';
+import express from 'express';
+import { login, register } from '../controllers/signIn';
 
 const router = express.Router();
 
-router.route('/').post(register).post(login)
+router.route('/register').post(register);
+router.route('/login').post(login);
 
-export default router
+export default router;
