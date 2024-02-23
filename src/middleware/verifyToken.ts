@@ -4,8 +4,6 @@ interface CustomRequest extends Request {
 }
 
 
-const secretKey = 'your_secret_key'; // This should be stored securely, preferably in an environment variable
-
 // Middleware to verify JWT
 export function verifyToken(req: CustomRequest, res: Response, next: () => void) {
   // Get auth header value
