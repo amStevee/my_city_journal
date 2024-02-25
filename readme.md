@@ -27,7 +27,7 @@ Let users Register to the travel_journal by sending their {firstname, lastname, 
 Author Table.
 
     GET a general list of isPublic Journal articles.
-    Filter result by location or year.
+    Filter result by location.
 
 if user is loged in (has token(JWT))
 Let the User POST an article about the place he/she have visited.

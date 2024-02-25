@@ -9,6 +9,7 @@ const app: Application = express();
 import signInRouter from './routes/signIn';
 import articleRouter from './routes/article';
 
+// Install rateLimiter
 app.use(cors());
 app.use(urlencoded({ extended: true }));
 app.use(express.json());
