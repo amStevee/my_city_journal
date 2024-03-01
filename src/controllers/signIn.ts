@@ -3,6 +3,7 @@ import { PrismaClient } from '@prisma/client';
 import { v4 as uuidv4 } from 'uuid';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
+import { paramsType } from '../utils/types';
 
 interface Body {
   firstname: string;
@@ -22,6 +23,17 @@ interface loginBody {
 const prisma = new PrismaClient();
 
 const jwt_secret = process.env.JWT_SECRET as string;
+
+
+export const getAllUsers = async (req: Request, res: Response) => {
+  try {
+    const users = await prisma.author.findMany()
+  
+    res.status(200).json(users)
+  } catch (error: any) {
+    res.status(400).json({msg: error.message})
+  }
+}
 
 export const register = async (req: Request, res: Response) => {
   try {
@@ -97,5 +109,22 @@ export const login = async (req: Request, res: Response) => {
     res
       .status(error.status)
       .json({ msg: '[Server Error]: something went wrong' });
+  }
+};
+
+
+// DELETE ACCOUNT
+export const deleteAccount = async (req: Request, res: Response) => {
+  try {
+    const { uxr }: paramsType = req.params;
+
+    await prisma.article.delete({
+      where: {
+        id: uxr,
+      },
+    });
+  } catch (error: any) {
+    console.error(error.message);
+    res.status(500).json({ error_msg: '[Server Error]: something went wrong' });
   }
 };

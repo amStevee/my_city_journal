@@ -1,8 +1,10 @@
 **TRAVEL JOURNAL**
+~~~~
 This journal helps one save and share his/her travel experences with the world while letting them have a peack at different mervelous sites from other public journal (if isPublic). it also allow you comment on peoples article, sharing your thought and experience with them.
 
 <!-- DATABASE -->
 **DATABASE SECTION**
+~~~~
 The database would be created with that intent of storing important data from the user such as user details, article from user, comments, etc. the main aim of this database is to make data speedly and readly availiable to the users when needed while maintaining the security of the user data.
 - Create an Author model that store detailes    about each user such as:
     {index[id], firstname, lastname, middlename?, index[username], email, password, following[] created@, updated@}
@@ -27,6 +29,7 @@ using prisma to create all modals [Author, Articles, Comments]
 
 <!-- API -->
 **API SECTION**
+~~~~
 
 - Let users Register to the travel_journal by sending their {firstname, lastname, middlename?, index[username], email, password} recieved from the frontend to the 
 Author Table.
